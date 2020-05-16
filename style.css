@@ -9,19 +9,53 @@
 ul {
   list-style: none;
 }
+#page-top {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 1;
+}
+#page-top a {
+  background-color: rgba(37, 37, 37, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+#page-top a:hover {
+  background-color: #666;
+}
+#page-top a .fas {
+  font-size: 1.5rem;
+}
 header {
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   width: 100%;
   z-index: 1;
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: space-between;
 }
-header h1 {
+header > a {
+  color: #fff;
+}
+header > a:hover {
+  color: #fff;
+}
+header > a h1 {
   float: left;
 }
-header .navbar .navbar-collapse {
+header .header-nav {
   justify-content: flex-end;
+  display: flex;
 }
-header .navbar .navbar-collapse .navbar-nav .nav-item a {
+header .header-nav .header-ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+header .header-nav .header-ul li a {
   color: #fff;
 }
 main .top-wrapper {
@@ -89,10 +123,12 @@ main .works .works-content a:hover .hover-mask {
   opacity: 1;
 }
 main .works .works-content a:last-child .hover-mask {
+  background-color: rgba(0, 0, 0, 0.4);
   opacity: 1;
+  padding-top: 30px;
 }
 main .works .works-content a:last-child:hover .hover-mask {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 main .services .services-content {
   display: flex;
@@ -113,12 +149,61 @@ main .contact .container form {
 footer {
   padding: 1rem 0;
 }
+footer .container .outside-link {
+  margin-right: 1.5rem;
+}
 footer .container .outside-link a .fab {
   font-size: 2rem;
 }
+footer .container .outside-link a .fa-twitter {
+  color: #1b9cec;
+}
 @media screen and (max-width: 767px) {
-  header h1 {
+  header {
+    height: 60px;
+  }
+  header > a h1 {
     font-size: 1.5rem;
+  }
+  header .header-nav {
+    width: calc(100% / 3);
+  }
+  header .header-nav .nav-bar {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  header .header-nav .nav-bar .nav-bar-line {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 24px;
+    border-radius: 2px;
+    display: inline-block;
+    background-color: #fff;
+  }
+  header .header-nav .nav-bar .nav-bar-line:nth-of-type(1) {
+    top: 0;
+  }
+  header .header-nav .nav-bar .nav-bar-line:nth-of-type(2) {
+    top: 10px;
+  }
+  header .header-nav .nav-bar .nav-bar-line:nth-of-type(3) {
+    bottom: 0;
+  }
+  header .header-nav .header-ul {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0;
+  }
+  header .header-nav .header-ul li a {
+    color: #fff;
   }
   main .works .works-content {
     flex-direction: column;
