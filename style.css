@@ -216,4 +216,7 @@ footer .container .outside-link a .fa-twitter {
   main .works .works-content a:hover .hover-mask {
     opacity: 0;
   }
+  main .works .works-content a:last-child .hover-mask {
+    opacity: 1;
+  }
 }
