@@ -145,6 +145,7 @@ main .services .services-content p {
 }
 main .contact .container form {
   width: 400px;
+  max-width: 100%;
 }
 footer {
   padding: 1rem 0;
