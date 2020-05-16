@@ -1,4 +1,4 @@
-.clearfix:before {
+background-color: rgba(0, 0, 0, .5);.clearfix:before {
   display: block;
   overflow: hidden;
   clear: both;
@@ -218,5 +218,8 @@ footer .container .outside-link a .fa-twitter {
   }
   main .works .works-content a:last-child .hover-mask {
     opacity: 1;
+  }
+  main .works .works-content a:last-child:hover .hover-mask {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
