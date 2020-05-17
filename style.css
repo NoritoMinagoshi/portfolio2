@@ -1,4 +1,4 @@
-background-color: rgba(0, 0, 0, .5);.clearfix:before {
+.clearfix:before {
   display: block;
   overflow: hidden;
   clear: both;
@@ -89,16 +89,15 @@ main .works .works-content {
   display: flex;
   flex-wrap: wrap;
 }
-main .works .works-content a {
-  overflow: hidden;
+main .works .works-content .hover-parent {
   width: calc(100% / 3);
   height: 200px;
   position: relative;
 }
-main .works .works-content a img {
+main .works .works-content .hover-parent img {
   overflow: hidden;
 }
-main .works .works-content a .hover-mask {
+main .works .works-content .hover-parent .hover-mask {
   width: 100%;
   height: inherit;
   position: absolute;
@@ -118,17 +117,23 @@ main .works .works-content a .hover-mask {
   padding-top: 0;
   font-size: 1.5rem;
 }
-main .works .works-content a:hover .hover-mask {
+main .works .works-content .hover-parent h3 {
+  display: none;
+}
+main .works .works-content .hover-parent:hover .hover-mask {
   padding-top: 30px;
   opacity: 1;
 }
-main .works .works-content a:last-child .hover-mask {
+main .works .works-content .hover-parent:last-child .hover-mask {
   background-color: rgba(0, 0, 0, 0.4);
   opacity: 1;
   padding-top: 30px;
 }
-main .works .works-content a:last-child:hover .hover-mask {
+main .works .works-content .hover-parent:last-child:hover .hover-mask {
   background-color: rgba(0, 0, 0, 0.7);
+}
+main .works .works-content .see-more-btn {
+  display: none;
 }
 main .services .services-content {
   display: flex;
@@ -162,9 +167,11 @@ footer .container .outside-link a .fa-twitter {
 @media screen and (max-width: 767px) {
   header {
     height: 60px;
+    background-color: transparent;
   }
   header > a h1 {
     font-size: 1.5rem;
+    color: #000;
   }
   header .header-nav {
     width: calc(100% / 3);
@@ -183,7 +190,7 @@ footer .container .outside-link a .fa-twitter {
     width: 24px;
     border-radius: 2px;
     display: inline-block;
-    background-color: #fff;
+    background-color: #000;
   }
   header .header-nav .nav-bar .nav-bar-line:nth-of-type(1) {
     top: 0;
@@ -206,20 +213,50 @@ footer .container .outside-link a .fa-twitter {
   header .header-nav .header-ul li a {
     color: #fff;
   }
-  main .works .works-content {
+  main .works .container {
+    padding: 0;
+  }
+  main .works .container .works-content {
     flex-direction: column;
   }
-  main .works .works-content a {
+  main .works .container .works-content .hover-parent {
     width: 100%;
-    height: 300px;
+    height: auto;
+    color: #000;
+    margin-top: 4rem;
+    border-bottom: 1px solid #ddd;
   }
-  main .works .works-content a:hover .hover-mask {
+  main .works .container .works-content .hover-parent:hover {
+    text-decoration: none;
+    background-color: #ddd;
+  }
+  main .works .container .works-content .hover-parent h3 {
+    display: block;
+  }
+  main .works .container .works-content .hover-parent:hover .hover-mask {
     opacity: 0;
   }
-  main .works .works-content a:last-child .hover-mask {
+  main .works .container .works-content .hover-parent:last-child .hover-mask {
     opacity: 1;
+    display: none;
   }
-  main .works .works-content a:last-child:hover .hover-mask {
-    background-color: rgba(0, 0, 0, 0.5);
+  main
+    .works
+    .container
+    .works-content
+    .hover-parent:last-child:hover
+    .hover-mask {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  main .works .container .works-content .hover-parent:last-child {
+    display: none;
+  }
+  main .works .container .works-content .see-more-btn {
+    margin-top: 3rem;
+    display: block;
+  }
+  main .works .container .works-content .see-more-btn .btn {
+    display: inline-block;
+    color: #fff;
   }
 }
